@@ -15,4 +15,11 @@
 	v)  By using the inbuilt functions of an ArrayList in java. 
 	vi) Sequential Search.
 
-3)
+3) The following classes will be created and utilized :-
+	- GeoLocation
+	-CTAStation
+	-CTARoute
+	-NewFile
+	
+4)  https://github.com/adityadasgupta/cs201_project/blob/master/uml.mdj
+
