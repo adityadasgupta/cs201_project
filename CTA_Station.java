@@ -18,19 +18,19 @@ public class CTA_Station{
 	public double getlatitude() {
 		return latitude;
 	}
-	
+
 	public double getlongitude() {
 		return longitude;
 	}
-	
+
 	public void setlatitude(double la) {
 		this.latitude=la;
 	}
-	
+
 	public void setlongitude(double lo) {
 		this.longitude=lo;
 	}
-	
+
 	public int getLine(int i) {
 		return line[i];
 	}
@@ -69,7 +69,7 @@ public class CTA_Station{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public double getResult() {
 		return result;
 	}
@@ -85,7 +85,7 @@ public class CTA_Station{
 		this.location = location;
 	}
 
-	
+
 	public boolean isWheelchair() {
 		return wheelchair;
 	}
@@ -93,13 +93,13 @@ public class CTA_Station{
 	public void setWheelchair(boolean wheelchair) {
 		this.wheelchair = wheelchair;
 	}
-	
-	public boolean equalsto(CTA_Station g1) {
+
+	public boolean equalsTo(CTA_Station g1) {
 		if(this.name==g1.name)
 			return true;
 		return false;
 	}
-	
+
 	public String toString() {
 		return name;
 	}
