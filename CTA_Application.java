@@ -26,11 +26,11 @@ public class CTA_Application extends CTA_Route{
 					continue;}
 			else if(choice==6) {deleteOne();
 					continue;}
-		/*	else if(choice==7) {route();
-		 * 			continue;}
-		 */
-			else if(choice==8) {System.out.println("\nThank you! \n");
-			 		break;}
+			else if(choice==7) {route();
+		 			continue;}
+			else if(choice==8) {write();
+				System.out.println("\nThank you! \n");
+				break;}
 			else { System.out.println("Enter a number between 1 and 8 only!");
 				 continue;}
 			} 

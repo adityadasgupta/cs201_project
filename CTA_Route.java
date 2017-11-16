@@ -2,14 +2,12 @@ package lab6;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CTA_Route extends CTA_Station{
-	private static String name1;
-	public static CTA_Station c1[]=new CTA_Station[138];
-	public static ArrayList<CTA_Station> stops = new ArrayList<CTA_Station>();
-	
 	public static void displayStationNames() {
 		for(CTA_Station e:stops)
 		{
@@ -226,5 +224,91 @@ public class CTA_Route extends CTA_Station{
 			return true;
 		return false;
 	}
+	public static void route() {
+		Scanner input=new Scanner(System.in);
+		double lat;
+		double lon;
+		String station;
+		String l;
+		System.out.print("Enter the latitude of your current location: ");
+		lat=input.nextDouble();
+		System.out.print("Enter the longitude of your current location: ");
+		lon=input.nextDouble();
+		CTA_Station d=new CTA_Station();
+		d=nearestStation(lat,lon);
+		System.out.println("The nearest station to your location is: " + d.getName());
+		System.out.println("Which line? ");
+		l=input.next();
+		CTA_Station g=new CTA_Station();
+		g=lookupstation(d.getName(),l);
+		System.out.println("Which station do you want to go to? ");
+		station=input.next();
+		System.out.println("Which line is it on? ");
+		String line1=input.next();
+		CTA_Station e=new CTA_Station();
+		e=lookupstation(station,line1);
+		CTA_Station r=new CTA_Station();
+		int i=0;
+		int j=0;
+		for(int u=0;u<8;u++) 
+			if(g.getNameofstation(u).equalsIgnoreCase(l)) 
+				i=u;
+		for(int u=0;u<8;u++) 
+			if(e.getNameofstation(u).equalsIgnoreCase(line1))
+				j=u;
+		r=route1(i,j);
+		System.out.print("Intersecting station: " + r.getName());
+		
+		
+	}
 	
+	public static CTA_Station route1(int i,int j) {
+		int c=0;
+		for(CTA_Station f:stops) {
+			if(f.getLine(i)!=-1 && f.getLine(j)!=-1) { 
+				return f;	
+				}
+			}
+		return null;
+	}
+	
+	public static void write() throws IOException{
+		File f = new File("output.csv");
+		
+		FileWriter file = new FileWriter("output.csv");
+			for (int i=0;i<138;i++) {
+			file.append(c1[i].getName());
+			file.append(",");
+			file.append(Double.toString(c1[i].getlatitude()));
+			file.append(",");
+			file.append(Double.toString(c1[i].getlongitude()));
+			file.append(",");
+			file.append(c1[i].getLocation());
+			file.append(",");
+			file.append(Boolean.toString(c1[i].isWheelchair()));
+			file.append(",");
+			file.append(Integer.toString(c1[i].getLine(0)));
+			file.append(",");
+			file.append(Integer.toString(c1[i].getLine(1)));
+			file.append(",");
+			file.append(Integer.toString(c1[i].getLine(2)));
+			file.append(",");
+			file.append(Integer.toString(c1[i].getLine(3)));
+			file.append(",");
+			file.append(Integer.toString(c1[i].getLine(4)));
+			file.append(",");
+			file.append(Integer.toString(c1[i].getLine(5)));
+			file.append(",");
+			file.append(Integer.toString(c1[i].getLine(6)));
+			file.append(",");
+			file.append(Integer.toString(c1[i].getLine(7)));
+			file.append("\n");
+		} 
+		Scanner sc = new Scanner(f);
+		while(sc.hasNextLine()) {
+			System.out.println(sc.nextLine());
+		}
+		f.delete();
+		
+	}
 }
