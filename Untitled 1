@@ -17,6 +17,10 @@
 
 3) The following classes will be created and utilised :-
 	-CTA_Station
+			Description - This class stores information about one single station.
+										The important privates include the name, latitude, longitude, an array of strings that stores which lines pass through it and an ArrayList.
+										It contains one method called nearestStation. It calculates the nearest station to a certain station.
 	-CTA_Route
+			Description - This class stores almost all of the methods that are used in the final application.
 	-CTA_Application
-	
+			Description - This class stores the main method. It contains the user interface.
