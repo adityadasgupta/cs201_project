@@ -1,25 +1,22 @@
 1) The user interface consists of an option menu. The option menu consists of the following options :-
+	-Nearest Station -- Find the nearest station to the user provided location.
 	-Search -- Searching the station using its name.
 	-Add -- Adding a station by asking the user to enter all the details
 	-Modify -- Modifying a station based on info provided by user
 	-Delete -- Deleting a station by its name that is provided by the user
 	-Route -- Creating an entire route where user provides the name of the 2 stations.
-	-Nearest Station -- Find the nearest station to the user provided location.
 	-Exit
-	
-2) 
+
+2)
 	i) The input file is read using a Scanner object in a string array which is split and stored in an ArrayList.
-	ii) The data is processed using the accessors and mutators of the variable assigned.
-	iii) There will be an ArrayList to store the information for each station.
+	ii) The data is processed using the accessors and mutators of the variables in which the data of the input file is stored.
+	iii) There will be an ArrayList to store the information for each station which is then written to an output csv file.
 	iv) Default and Non-Default constructors and the nearestStation() function will have different parameters.
-	v)  By using the inbuilt functions of an ArrayList in java. 
-	vi) Sequential Search.
+	v)  By using the inbuilt functions of an ArrayList in java and user defined methods.
+	vi) Sequential Search of the ArrayList.
 
-3) The following classes will be created and utilized :-
-	- GeoLocation
-	-CTAStation
-	-CTARoute
-	-NewFile
+3) The following classes will be created and utilised :-
+	-CTA_Station
+	-CTA_Route
+	-CTA_Application
 	
-4)  https://github.com/adityadasgupta/cs201_project/blob/master/uml.mdj
-
